@@ -1,6 +1,6 @@
 \c snacks_dev;
 
-INSERT INTO snacks (name, url, calories, fiber, sodium, sugar, gluten_free, flavor_profile, is_healthy) VALUES
+INSERT INTO snacks (name, image, calories, fiber, sodium, sugar, gluten_free, flavor_profile, is_healthy) VALUES
 ('Granola Bar', 'https://www.wellplated.com/wp-content/uploads/2014/02/Almond-Orange-Healthy-Granola-Bars-with-Coconut-and-Honey.jpg', '87', '1.5', '15', '10', true, 'sweet', false ),
 ('Pistachios', 'https://post.healthline.com/wp-content/uploads/2020/01/pistachio-nut-1296x728-header-1296x728.jpg', '50', '0.8', '10', '12', true, 'bitter', false ),
 ('Apples and Peanut Butter', 'https://images.heb.com/is/image/HEBGrocery/recipe-hm-large/apple-slices-with-peanut-butter-snack-recipe.jpg', '45', '2.7', '18', '15', true, 'bitter-sweet', false ),
