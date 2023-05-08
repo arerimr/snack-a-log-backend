@@ -1,6 +1,6 @@
 const express = require('express');
-const { getAllSnacks, getASnack } = require('../queries/snacks');
 const snacks = express.Router()
+const { getAllSnacks, getASnack } = require('../queries/snacks');
 
 snacks.get('/', async (req, res) => {
     const allSnacks = await getAllSnacks();
