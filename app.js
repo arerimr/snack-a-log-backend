@@ -5,8 +5,8 @@ const cors = require('cors');
 app.use(express.json());
 app.use(cors());
 
-// const snackController = require("./controllers/snackController.js");
-// app.use("/snack", snackController);
+const snackController = require("./Controllers/snackController.js");
+app.use("/snacks", snackController);
 
 app.get("/", (req, res) => {
   res.send("Welcome to our Snack-a-log App!");

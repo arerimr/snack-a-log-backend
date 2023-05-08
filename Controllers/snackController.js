@@ -13,7 +13,7 @@ snacks.get('/:id', async (req, res) => {
     snack ? res.status(200).json(snack) : res.status(500).json({ error: 'server error' })
 });
 
-module.exports
+module.exports = snacks;
 
 
 
