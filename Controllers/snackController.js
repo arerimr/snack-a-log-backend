@@ -1,6 +1,6 @@
 const express = require('express');
-const { getAllSnacks, getASnack } = require('../queries/snacks');
 const snacks = express.Router()
+const { getAllSnacks, getASnack } = require('../queries/snacks');
 
 snacks.get('/', async (req, res) => {
     const allSnacks = await getAllSnacks();
@@ -13,7 +13,7 @@ snacks.get('/:id', async (req, res) => {
     snack ? res.status(200).json(snack) : res.status(500).json({ error: 'server error' })
 });
 
-module.exports
+module.exports = snacks
 
 
 
