@@ -1,4 +1,4 @@
-
+const db = ``
 
 
 const getAllSnacks = async () => {
@@ -10,6 +10,16 @@ const getAllSnacks = async () => {
     }
 }
 
+const getASnack = async (id) => {
+    try {
+        const snack = `await db.one("SELECT * FROM snacks WHERE id=$1", id)`
+        return snack;
+    } catch (e) {
+        return e;
+    }
+}
+
 module.exports = {
     getAllSnacks,
+    getASnack,
 }
