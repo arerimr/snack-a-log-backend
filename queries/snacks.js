@@ -21,5 +21,5 @@ const getASnack = async (id) => {
 
 module.exports = {
     getAllSnacks,
-    getASnack,
+    getASnack
 }
