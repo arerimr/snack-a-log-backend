@@ -1,6 +1,6 @@
 const express = require('express');
 const snacks = express.Router()
-const { getAllSnacks, getASnack, createSnack, deleteSnack } = require('../queries/snacks');
+const { getAllSnacks, getASnack, createSnack, deleteSnack, updateSnack } = require('../queries/snacks');
 
 snacks.get('/', async (req, res) => {
     const allSnacks = await getAllSnacks();
@@ -12,6 +12,18 @@ snacks.get('/:id', async (req, res) => {
     const snack = await getASnack(id)
     snack ? res.status(200).json(snack) : res.status(500).json({ error: 'server error' })
 });
+
+snacks.put('/:id', async (req, res) => {
+    const { id } = req.params;
+    const { body } = req;
+
+    try {
+        const updatedSnack = await updateSnack(id, body);
+        res.status(200).json(updatedSnack);
+    } catch (error) {
+        res.status(400).json({ error: error });
+    }
+})
 
 snacks.post('/', async (req, res) => {
     const newSnack = req.body
