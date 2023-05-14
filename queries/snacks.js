@@ -6,7 +6,7 @@ const getAllSnacks = async () => {
         const allSnacks = await db.any("SELECT * FROM snacks")
         return allSnacks;
     } catch (e) {
-        return e
+        return e;
     }
 }
 
@@ -31,21 +31,22 @@ const updateSnack = async (id, snack) => {
 }
 
 const createSnack = async (snackToAdd) => {
-    const { name, image, calories, fiber, sodium, sugar, gluten_free, flavor_profile, is_healthy } = snackToAdd
+    const { name, image, calories, fiber, sodium, sugar, gluten_free, flavor_profile, is_healthy } = snackToAdd;
+    
     try {
         const newSnack = await db.one("INSERT INTO snacks (name, image, calories, fiber, sodium, sugar, gluten_free, flavor_profile, is_healthy) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *", [name, image, calories, fiber, sodium, sugar, gluten_free, flavor_profile, is_healthy])
-        return newSnack
+        return newSnack;
     } catch (e) {
-        return e
+        return e;
     }
 }
 
 const deleteSnack = async (id) => {
     try {
         const deletedSnack = await db.one("DELETE FROM snacks WHERE id=$1 RETURNING *", id)
-        return deletedSnack
+        return deletedSnack;
     } catch (e) {
-        return e
+        return e;
     }
 }
 

@@ -29,13 +29,13 @@ snacks.post('/', async (req, res) => {
     const newSnack = req.body
     const createdSnack = await createSnack(newSnack)
     createdSnack ? res.status(200).json(createdSnack) : res.status(500).json({ error: 'server error' })
-});
+})
 
 snacks.delete('/:id', async (req, res) => {
     const { id } = req.params
     const deletedSnack = await deleteSnack(id)
     deletedSnack ? res.status(200).json(deletedSnack) : res.status(500).json({ error: 'server error' })
-});
+})
 
 module.exports = snacks;
 
