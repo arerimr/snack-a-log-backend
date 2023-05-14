@@ -27,6 +27,8 @@ const updateSnack = async (id, snack) => {
         return updatedSnack;
     } catch (e) {
         return e;
+    }
+}
 
 const createSnack = async (snackToAdd) => {
     const { name, image, calories, fiber, sodium, sugar, gluten_free, flavor_profile, is_healthy } = snackToAdd
