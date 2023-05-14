@@ -26,7 +26,9 @@ const updateSnack = async (id, snack) => {
         const updatedSnack = await db.one("UPDATE snacks SET name=$1, image=$2, calories=$3, fiber=$4, sodium=$5, sugar=$6, gluten_free=$7, flavor_profile=$8, is_healthy=$9 WHERE id=$10 RETURNING *", [name, image, calories, fiber, sodium, sugar, gluten_free, flavor_profile, is_healthy, id]);
         return updatedSnack;
     } catch (e) {
-        return e;
+        return e
+    }
+}
 
 const createSnack = async (snackToAdd) => {
     const { name, image, calories, fiber, sodium, sugar, gluten_free, flavor_profile, is_healthy } = snackToAdd
